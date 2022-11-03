@@ -12,13 +12,26 @@ package com.fernandopaniagua.multihilodemo;
 public class MultihiloDemo {
     
     public static void main(String[] args) {
-        //Ratones
-        Raton mickey = new Raton("Mickey",5000);
-        Raton jerry = new Raton("Jerry",20000);
-        Raton speedy = new Raton("Speedy",30000);
-        mickey.start();//10
-        jerry.start();//15
-        speedy.start();//5
+        //crearRatones();
+        //crearGatos();
+        //crearSumadores();
+        crearAgregadores();
+    }
+
+    private static void crearAgregadores(){
+        for(int i=0;i<10;i++){
+            new Agregador().start();
+        }
+    }
+    
+    private static void crearSumadores(){
+        Sumador s = new Sumador("Sumador", 100000, 0);
+        for (int i=0;i<10;i++){
+            new Thread(s).start();
+        }
+    }
+    
+    private static void crearGatos() {
         //Gatos
         Gato garfield = new Gato("Garfield",8000);
         Gato tom = new Gato("Tom",12000);
@@ -26,5 +39,15 @@ public class MultihiloDemo {
         new Thread(garfield).start();
         new Thread(tom).start();
         new Thread(felix).start();
+    }
+
+    private static void crearRatones() {
+        //Ratones
+        Raton mickey = new Raton("Mickey",5000);
+        Raton jerry = new Raton("Jerry",20000);
+        Raton speedy = new Raton("Speedy",30000);
+        mickey.start();//10
+        jerry.start();//15
+        speedy.start();//5
     }
 }
