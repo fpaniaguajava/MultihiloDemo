@@ -21,5 +21,4 @@ public class SistemaRiego extends TimerTask{
         SistemaRiego riego = new SistemaRiego();
         temporizador.schedule(riego, 10000, 3000);
     }
-    
 }
