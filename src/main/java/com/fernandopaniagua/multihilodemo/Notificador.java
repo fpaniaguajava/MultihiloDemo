@@ -23,7 +23,7 @@ public class Notificador {
         trayIcon.setImageAutoSize(true);
         trayIcon.setToolTip("System tray icon demo");
         tray.add(trayIcon);
-        trayIcon.displayMessage("Estira las piernas", "Alerta de salud", MessageType.INFO);
+        trayIcon.displayMessage("¡Atención!", "Estira las piernas", MessageType.WARNING);
     }
     public static void main(String[] args) {
         try {
